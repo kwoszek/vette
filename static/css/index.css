@@ -66,7 +66,7 @@ z-index: 10}
     padding: 10px;
 }
 
-button::before {
+.button::before {
     content: '';
     border-radius: 1000px;
     min-width: calc(300px + 12px);
@@ -86,11 +86,11 @@ button::before {
     transform: translateY(-6px);
 }
 
-button:hover::before, button:focus::before {
+.button:hover::before, button:focus::before {
     opacity: 1;
 }
 
-button::after {
+.button::after {
     content: '';
     width: 30px; height: 30px;
     border-radius: 100%;
@@ -103,7 +103,7 @@ button::after {
     animation: ring 1.5s infinite;
 }
 
-button:hover::after, button:focus::after {
+.button:hover::after, button:focus::after {
     animation: none;
     display: none;
 }
@@ -198,4 +198,61 @@ input{
 }
 #imie{
     margin-top: 2vw;
+}
+
+.button2 {
+    padding: 17px 40px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: 0;
+    background-color: transparent;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 400;
+    font-size: 2vw;
+    transition: all 0.5s ease;
+}
+
+article:hover > .btncontainer >.button2 {
+    letter-spacing: 3px;
+    background-color: white;
+    color: black;
+    box-shadow: rgb(256 256 256) 0px 7px 29px 0px;
+}
+article:hover{
+    backdrop-filter: blur(10px);
+}
+.button2:active{
+    letter-spacing: 3px;
+    background-color: white;
+    color: black;
+    box-shadow: rgb(256 256 256) 0px 0px 0px 0px;
+    transform: translateY(10px);
+    transition: 100ms;
+}
+
+.btncontainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+article:hover > .btncontainer{
+    animation: blur-in 500ms 0s forwards;
+}
+article:active > .btncontainer{
+    animation: blur-in 500ms 0s forwards;
+}
+@keyframes blur-in {
+    from {
+        backdrop-filter: blur(0px);
+    }
+    to {
+        backdrop-filter: blur(10px);
+    }
 }
